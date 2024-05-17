@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Lego</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+      background-color: #f4f4f4;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+    }
+    .container {
+      width: 100%;
+      max-width: 800px;
+      background-color: white;
+      border-radius: 10px;
+      box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.1);
+      overflow: hidden;
+    }
+    .slide {
+      padding: 40px;
+      text-align: center;
+      display: none;
+    }
+    .visible {
+      display: block;
+    }
+    .slide img {
+      max-width: 100%;
+      margin-top: 20px;
+      border-radius: 10px;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <div class="slide visible">
+       <h1>Top 10 Lego Minifigures I Have</h1>
+      <p>Use Arrow Keys Left and Right to go next slide or previous slide</p>
+    </div>
+
+    <div class="slide">
+      <h1>Lego Minifigures</h1>
+      <img src="e0995e1b-f508-4cc9-a74b-6ab3709d4d56.jpg" alt="Lego Minifigures" width="500" height="">
+    </div>
+
+    <div class="slide">
+      <h1>10. 41st Kashyyyk Clone Trooper</h1>
+      <p>In the set 75035</p>
+      <img src="41st_kashyyyk_clone_trooper.jpg.jpg" alt="41st Kashyyyk Clone Trooper" width="200" height="300">
+    </div>
+
+    <div class="slide">
+      <h1>9. Blacktron 1</h1>
+      <p>In the set 6781</p>
+      <img src="blacktron_1.jpg.jpg" alt="Blacktron 1" width="200" height="300">
+    </div>
+
+    <div class="slide">
+      <h1>8. Pirate Captain Iron IronHook</h1>
+      <p>In the set 6268</p>
+      <img src="pirate_captain.jpg.jpg" alt="Pirate Captain Iron IronHook" width="200" height="300">
+    </div>
+
+    <div class="slide">
+      <h1>7. Space Police 1</h1>
+      <p>In the set 6781</p>
+      <img src="space_police_1.jpg.jpg" alt="Space Police 1" width="200" height="300">
+    </div>
+
+    <div class="slide">
+      <h1>6. Hulk</h1>
+      <p>In the set 76031 and76041</p>
+      <img src="hulk.jpg.jpg" alt="Hulk" width="200" height="300">
+    </div>
+    
+    <div class="slide">
+      <h1>5. M:Tron</h1>
+      <p>In the set 6704</p>
+      <img src="mtron.jpg.jpg" alt="M:Tron" width="200" height="300">
+    </div>
+
+    <div class="slide">
+      <h1>4. Jay</h1>
+      <p>In the set 70501</p>
+      <img src="jay.jpg.jpg" alt="Jay" width="200" height="300">
+    </div>
+
+    <div class="slide">
+      <h1>3. Pirate</h1>
+      <p>In the set 6268</p>
+      <img src="pirate.jpg.jpg" alt="Pirate" width="200" height="300">
+      </div>
+
+    <div class="slide">
+      <h1>2. Futuron Blue Astronaut</h1>
+      <p>In the set 6828</p>
+      <img src="futuron_blue_astronaut.jpg.jpg" alt="Futuron Blue Astronaut" width="200" height="300">
+    </div>
+
+    <div class="slide">
+      <h1>1. The Grand Inquisitor</h1>
+      <p>In the set 75082</p>
+     <img src="grand_inquisitor.jpg.jpg" alt="The Grand Inquisitor" width="200" height="300">
+    </div>
+
+    <script>
+    const slides = document.querySelectorAll('.slide');
+    let index = 0;
+
+    function showSlide(n) {
+      slides.forEach(slide => slide.classList.remove('visible'));
+      slides[n].classList.add('visible');
+    }
+
+    function nextSlide() {
+      index++;
+      if (index >= slides.length) {
+        index = 0;
+      }
+      showSlide(index);
+    }
+
+    function prevSlide() {
+      index--;
+      if (index < 0) {
+        index = slides.length - 1;
+      }
+      showSlide(index);
+    }
+
+    document.addEventListener('keydown', (event) => {
+      if (event.key === 'ArrowRight') {
+        nextSlide();
+      } else if (event.key === 'ArrowLeft') {
+        prevSlide();
+      }
+    });
+  </script>
+</body>
+</html>

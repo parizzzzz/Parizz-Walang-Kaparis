@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Website</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+        }
+        header {
+            background-color: #333;
+            color: #fff;
+            padding: 20px;
+            text-align: center;
+        }
+        nav {
+            background-color: #444;
+            padding: 10px;
+            text-align: center;
+        }
+        nav a {
+            color: #fff;
+            text-decoration: none;
+            padding: 10px 20px;
+            margin: 5px;
+            border: 2px solid #fff;
+            display: inline-block;
+            border-radius: 5px;
+        }
+        nav a:hover {
+            color: #444;
+            background-color: #fff;
+        }
+        section {
+            padding: 20px;
+        }
+        footer {
+            background-color: #333;
+            color: #fff;
+            padding: 20px;
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>My Website</h1>
+    </header>
+
+    <nav>
+        <a href="#" onclick="window.location.href = 'https://www.youtube.com/watch?v=dQw4w9WgXcQ';">Don't Click</a>
+        <a href="lego.html">Lego</a>
+        <a href="paint.html">Paint</a>  
+        <a href="about.html">About</a>  
+    </nav>
+
+    <section id="home">
+    </section>
+
+    <section id="about" style="display: none;">
+        <h2>About Me</h2>
+        <p>This is the about section.</p>
+    </section>
+
+    <section id="projects" style="display: none;">
+    </section>
+
+     <footer>
+        <p>&copy; 2024 Parizz. All rights reserved.</p>
+    </footer>
+
+    <script>
+        function showPage(pageId) {
+            var sections = document.querySelectorAll('section');
+            for (var i = 0; i < sections.length; i++) {
+                sections[i].style.display = 'none';
+            }
+            document.getElementById(pageId).style.display = 'block';
+        }
+    </script>
+</body>
+</html>
